@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <title>overview</title>
+  </head>
+  <body>
+    <div class="container-fluid dashboard">
+      <div class="row">
+        <div
+          class="col-md-3 side-bar px-5 d-lg-none d-md-none d-sm-none d-none d-xl-block"
+        >
+          <p class="logo">CoinVerse</p>
+          <div class="transaction">
+            <p class="h6 available-balance-text">AVAILABLE BALANCE</p>
+
+            <div class="d-flex justify-content-between">
+              <p class="btc">0 BTC</p>
+              <p><i class="fa-solid fa-square-poll-vertical"></i></p>
+            </div>
+            <div class="d-flex justify-content-between my-1">
+              <p>profit(7d)</p>
+              <p>%</p>
+            </div>
+            <div class="d-flex justify-content-between">
+              <p>Deposit in Orders</p>
+              <p>BTC</p>
+            </div>
+
+            <div class="btn-container d-flex justify-content-between">
+              <button class="btn btn-primary text-white">Deposit</button>
+              <button class="btn btn-warning text-white">Withdraw</button>
+            </div>
+          </div>
+          <div class="menu mt-5 p-0">
+            <p class="h6">Menu</p>
+            <nav class="nav flex-column px-0">
+              <a class="nav-link m-0 p-0" aria-current="page" href="/"
+                >Overview</a
+              >
+              <a class="nav-link p-0 my-2" href="/transactions">Transactions</a>
+              <a class="nav-link p-0" href="/profile">My profile</a>
+              <a class="nav-link p-0 my-2" href="settings">Settings</a>
+              <a class="nav-link p-0" href="/logout">Logout</a>
+            </nav>
+          </div>
+        </div>
+        <div class="col-xl-9 col-lg-12 p-0">
+          <div class="d-flex justify-content-between nav">
+            <div>
+              <i class="fa-solid fa-bars"></i>
+            </div>
+            <nav class="nav-mobile flex-column px-0 d-none">
+              <a class="nav-link m-0 p-0" aria-current="page" href="#"
+                >Overview</a
+              >
+              <a class="nav-link p-0 my-2" href="/transactions">Transactions</a>
+              <a class="nav-link p-0" href="/profile">My profile</a>
+              <a class="nav-link p-0 my-2" href="/settings">Settings</a>
+              <a class="nav-link p-0" href="/logout">Logout</a>
+            </nav>
+            <div class="d-flex justify-content-end">
+              <span class="navbar-brand mb-0 h1 d-flex align-items-center"
+                ><i class="fa-solid fa-user me-2"></i
+                ><span class="user"
+                  ><%= user.full_name %>
+                  <i class="fa-solid fa-angle-down ms-2"></i
+                ></span>
+              </span>
+            </div>
+          </div>
+
+          <main>
+            <p class="h6 account_wall">Account Wallet</p>
+            <div
+              class="d-xl-flex justify-content-between p-3 align-items-center"
+            >
+              <p class="h6">Here is the list of your assets / wallets!</p>
+              <section class="buttons d-flex align-items-center">
+                <i class="fa-solid fa-gear"></i>
+                <button class="btn btn-primary mx-3">send</button>
+                <button class="btn btn-warning">Withdraw</button>
+              </section>
+            </div>
+
+            <div
+              class="row justify-content-around row-cryptoAccounts mb-3 px-3 m-0"
+            >
+              <!-- <p class="h5 cryptoAccounts p-0">Crypto Accounts</p> -->
+              <div class="col-xl-5 col-lg-12 bitcoin-wallet mb-lg-5">
+                <p class="h4 text-white">Bitcoin Wallet</p>
+                <p class="balance text-white">0 BTC</p>
+                <!-- here -->
+                <!-- <p class="text-white"><%= user.balance %>ahhhhh</p> -->
+                <!-- to here -->
+                <p class="convert text-white">0.00 usd</p>
+                <div class="actions d-flex">
+                  <button class="btn text-white btn-outline-primary send">
+                    send
+                  </button>
+                  <button
+                    class="btn text-white btn-outline-warning recieve_btn mx-4"
+                  >
+                    recieve
+                  </button>
+                  <button class="btn text-white btn-outline-info withdraw">
+                    withdraw
+                  </button>
+                </div>
+              </div>
+
+              <div class="trans-body">
+                <div class="transaction-form bg-white p-4">
+                  <i class="fa-solid fa-xmark close-icon"></i>
+                  <p class="h3 my-3">Transfer</p>
+
+                  <form action="" class="trans_form">
+                    <input
+                      type="text"
+                      class="form-control my-3 w-80 wallet_address"
+                      placeholder="Enter the wallet address"
+                    />
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        aria-label="First name"
+                        class="form-control mx-2 usd_amount"
+                        placeholder="USD amount"
+                      />
+                      <input
+                        type="text"
+                        aria-label="Last name"
+                        class="form-control me-2 btc_amount"
+                        placeholder="BTC amount"
+                      />
+                    </div>
+                    <div
+                      class="d-grid gap-2 d-md-block m-auto my-2 justify-content-evenly w-100"
+                    >
+                      <button class="btn btn-primary" type="submit">
+                        Submit
+                      </button>
+                      <button class="btn btn-outline-danger" type="button">
+                        Cancel
+                      </button>
+                      <div class="message my-2"></div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="col-xl-5 col-lg-12 iframe">
+                <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container">
+                  <div id="tradingview_b299c"></div>
+                  <div class="tradingview-widget-copyright">
+                    <a
+                      href="https://www.tradingview.com/symbols/BTCUSD/?exchange=BITSTAMP"
+                      rel="noopener"
+                      target="_blank"
+                      ><span class="blue-text">BTCUSD Chart</span></a
+                    >
+                    by TradingView
+                  </div>
+                  <script
+                    type="text/javascript"
+                    src="https://s3.tradingview.com/tv.js"
+                  ></script>
+                  <script type="text/javascript">
+                    new TradingView.widget({
+                      autosize: true,
+                      symbol: "BITSTAMP:BTCUSD",
+                      interval: "D",
+                      timezone: "Etc/UTC",
+                      theme: "dark",
+                      style: "1",
+                      locale: "en",
+                      toolbar_bg: "#f1f3f6",
+                      enable_publishing: false,
+                      allow_symbol_change: true,
+                      container_id: "tradingview_b299c",
+                    });
+                  </script>
+                </div>
+                <!-- TradingView Widget END -->
+              </div>
+
+              <div class="transancations-all container">
+                <h4>Transactions</h4>
+                <p>Here is a list of your recent transactions</p>
+                <div class="row">
+                  <div class="col-5">
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Amount</th>
+                          <th scope="col">USD</th>
+                          <th scope="col">Date</th>
+                          <th scope="col">Address</th>
+                          <th scope="col">Status</th>
+                        </tr>
+                      </thead>
+                      <tbody class="table-body"></tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <section class="receive_box d-none">
+                <div class="recieve_details">
+                  <section class="receive_sec d-flex justify-content-between">
+                    <h4><i class="fa-brands fa-btc pe-2"></i>Wallet Detail</h4>
+                    <i class="fa-solid fa-xmark" id="close"></i>
+                  </section>
+                  <div class="alert alert-success d-none copy_alert">
+                    Wallet address copied
+                  </div>
+                  <p class="text-center wall_add">
+                    Wallet Address <i class="fa-solid fa-clone"></i>
+                  </p>
+                  <p class="address text-center"></p>
+
+                  <div class="image"></div>
+                </div>
+              </section>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
+    <script src="/static/js/dashboard.js"></script>
+  </body>
+</html>

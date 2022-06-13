@@ -1,0 +1,35 @@
+{
+  "name": "mycrypt",
+  "version": "1.0.0",
+  "description": "this is for a class",
+  "main": "app.js",
+  "scripts": {
+    "test": "start",
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "bcrypt": "^5.0.1",
+    "bitcore-lib": "^8.25.28",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.6",
+    "node-fetch": "^3.2.6",
+    "nodemailer": "^6.7.5",
+    "nodemon": "^2.0.16",
+    "qrcode": "^1.5.0"
+  },
+  "keywords": [
+    "node js",
+    "heroku"
+  ],
+  "engines": {
+    "node": "16.14.2"
+  }
+}
